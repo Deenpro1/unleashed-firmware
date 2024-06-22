@@ -7,7 +7,7 @@ void ibutton_scene_rpc_on_enter(void* context) {
     popup_set_header(popup, "iButton", 82, 28, AlignCenter, AlignBottom);
     popup_set_text(popup, "RPC mode", 82, 32, AlignCenter, AlignTop);
 
-    popup_set_icon(popup, 2, 14, &I_iButtonKey_49x44);
+    popup_set_icon(popup, 2, 14, &I_iButtonKey_50x45);
 
     view_dispatcher_switch_to_view(ibutton->view_dispatcher, iButtonViewPopup);
 
