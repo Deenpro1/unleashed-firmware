@@ -51,36 +51,36 @@ static void bad_usb_draw_callback(Canvas* canvas, void* _model) {
     } else if((state == BadUsbStateRunning) || (state == BadUsbStateDelay)) {
         elements_button_center(canvas, "Stop");
         if(!model->pause_wait) {
-            elements_button_right(canvas, "Pause");
+            elements_button_right(canvas, "Pausieren");
         }
     } else if(state == BadUsbStatePaused) {
-        elements_button_center(canvas, "End");
-        elements_button_right(canvas, "Resume");
+        elements_button_center(canvas, "Ende");
+        elements_button_right(canvas, "Play");
     } else if(state == BadUsbStateWaitForBtn) {
-        elements_button_center(canvas, "Press to continue");
+        elements_button_center(canvas, "Drücke, um fortzufahren");
     } else if(state == BadUsbStateWillRun) {
-        elements_button_center(canvas, "Cancel");
+        elements_button_center(canvas, "Abbruch");
     }
 
     if(state == BadUsbStateNotConnected) {
         canvas_draw_icon(canvas, 4, 26, &I_Clock_18x18);
         canvas_set_font(canvas, FontPrimary);
-        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "Connect");
-        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "to device");
+        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "Verbinde");
+        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "zum Gerät");
     } else if(state == BadUsbStateWillRun) {
         canvas_draw_icon(canvas, 4, 26, &I_Clock_18x18);
         canvas_set_font(canvas, FontPrimary);
-        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "Will run");
-        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "on connect");
+        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "Läuft, bei");
+        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "verbindung");
     } else if(state == BadUsbStateFileError) {
         canvas_draw_icon(canvas, 4, 26, &I_Error_18x18);
         canvas_set_font(canvas, FontPrimary);
-        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "File");
-        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "ERROR");
+        canvas_draw_str_aligned(canvas, 127, 31, AlignRight, AlignBottom, "Datei");
+        canvas_draw_str_aligned(canvas, 127, 43, AlignRight, AlignBottom, "Fehler");
     } else if(state == BadUsbStateScriptError) {
         canvas_draw_icon(canvas, 4, 26, &I_Error_18x18);
         canvas_set_font(canvas, FontPrimary);
-        canvas_draw_str_aligned(canvas, 127, 33, AlignRight, AlignBottom, "ERROR:");
+        canvas_draw_str_aligned(canvas, 127, 33, AlignRight, AlignBottom, "Fehler:");
         canvas_set_font(canvas, FontSecondary);
         furi_string_printf(disp_str, "line %zu", model->state.error_line);
         canvas_draw_str_aligned(
@@ -99,9 +99,9 @@ static void bad_usb_draw_callback(Canvas* canvas, void* _model) {
         canvas_draw_icon(canvas, 117, 26, &I_Percent_10x14);
     } else if(state == BadUsbStateRunning) {
         if(model->anim_frame == 0) {
-            canvas_draw_icon(canvas, 4, 23, &I_EviSmile1_18x21);
+            canvas_draw_icon(canvas, 4, 23, &I_EviSmile1_19x22);
         } else {
-            canvas_draw_icon(canvas, 4, 23, &I_EviSmile2_18x21);
+            canvas_draw_icon(canvas, 4, 23, &I_EviSmile2_19x22);
         }
         canvas_set_font(canvas, FontBigNumbers);
         furi_string_printf(
@@ -118,9 +118,9 @@ static void bad_usb_draw_callback(Canvas* canvas, void* _model) {
         canvas_draw_icon(canvas, 117, 26, &I_Percent_10x14);
     } else if(state == BadUsbStateDelay) {
         if(model->anim_frame == 0) {
-            canvas_draw_icon(canvas, 4, 23, &I_EviWaiting1_18x21);
+            canvas_draw_icon(canvas, 4, 23, &I_EviWaiting1_19x22);
         } else {
-            canvas_draw_icon(canvas, 4, 23, &I_EviWaiting2_18x21);
+            canvas_draw_icon(canvas, 4, 23, &I_EviWaiting2_19x22);
         }
         canvas_set_font(canvas, FontBigNumbers);
         furi_string_printf(
