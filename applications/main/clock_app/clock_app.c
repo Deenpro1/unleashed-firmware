@@ -20,7 +20,7 @@ static void clock_render_callback(Canvas* const canvas, void* ctx) {
 
     ClockState* state = ctx;
     if(furi_mutex_acquire(state->mutex, 200) != FuriStatusOk) {
-        //FURI_LOG_D(TAG, "Can't obtain mutex, requeue render");
+        //FURI_LOG_D(TAG, "Mutex nicht erreichbar, rendering velgeschlagen.");
         PluginEvent event = {.type = EventTypeTick};
         furi_message_queue_put(state->event_queue, &event, 0);
         return;
@@ -166,7 +166,7 @@ int32_t clock_app(void* p) {
     furi_timer_start(timer, furi_kernel_get_tick_frequency());
     //FURI_LOG_D(TAG, "Timer started");
 
-    // Main loop
+    // Main Programm loop
     PluginEvent event;
     for(bool processing = true; processing;) {
         FuriStatus event_status = furi_message_queue_get(plugin_state->event_queue, &event, 100);
