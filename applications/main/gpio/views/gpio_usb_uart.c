@@ -42,7 +42,7 @@ static void gpio_usb_uart_draw_callback(Canvas* canvas, void* _model) {
     canvas_draw_str(canvas, 22, 42, temp_str);
 
     if(model->baudrate == 0)
-        snprintf(temp_str, 18, "Baud: ????");
+        snprintf(temp_str, 18, "Baud: not available");
     else
         snprintf(temp_str, 18, "Baud: %lu", model->baudrate);
     canvas_draw_str(canvas, 45, 62, temp_str);
