@@ -1,4 +1,4 @@
-#include "../gpio_app_i.h"
+IN#include "../gpio_app_i.h"
 #include <furi_hal_power.h>
 #include <furi_hal_usb.h>
 #include <dolphin/dolphin.h>
@@ -16,8 +16,8 @@ enum GpioOtg {
 };
 
 const char* const gpio_otg_text[GpioOtgSettingsNum] = {
-    "OFF",
-    "ON",
+    "EIN",
+    "AUS",
 };
 
 static void gpio_scene_start_var_list_enter_callback(void* context, uint32_t index) {
@@ -52,11 +52,11 @@ void gpio_scene_start_on_enter(void* context) {
 
     variable_item_list_add(var_item_list, "USB-UART Bridge", 0, NULL, NULL);
 
-    variable_item_list_add(var_item_list, "GPIO Manual Control", 0, NULL, NULL);
+    variable_item_list_add(var_item_list, "GPIO Manuelle Kontrolle", 0, NULL, NULL);
 
     item = variable_item_list_add(
         var_item_list,
-        "5V on GPIO",
+        "5V GPIO",
         GpioOtgSettingsNum,
         gpio_scene_start_var_list_change_callback,
         app);
