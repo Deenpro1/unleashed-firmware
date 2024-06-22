@@ -9,15 +9,15 @@
 #include <ibutton/ibutton_protocols.h>
 
 static void ibutton_cli_print_usage(void) {
-    printf("Usage:\r\n");
-    printf("ikey read\r\n");
-    printf("ikey emulate <key_type> <key_data>\r\n");
-    printf("ikey write Dallas <key_data>\r\n");
-    printf("\t<key_type> choose from:\r\n");
+    printf("Verwendungen:\r\n");
+    printf("ikey lesen\r\n");
+    printf("ikey emulieren <key_type> <key_data>\r\n");
+    printf("ikey schreiben Dallas <key_data>\r\n");
+    printf("\t<key_type> entscheiden von:\r\n");
     printf("\tDallas (8 bytes key_data)\r\n");
     printf("\tCyfral (2 bytes key_data)\r\n");
     printf("\tMetakom (4 bytes key_data), must contain correct parity\r\n");
-    printf("\t<key_data> are hex-formatted\r\n");
+    printf("\t<key_data> sind hex-formatiert\r\n");
 }
 
 static bool ibutton_cli_parse_key(iButtonProtocols* protocols, iButtonKey* key, FuriString* args) {
