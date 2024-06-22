@@ -59,7 +59,7 @@ uint8_t hid_usb_get_led_state(void* inst) {
     return furi_hal_hid_get_led_state();
 }
 
-static const BadUsbHidApi hid_api_usb = {
+static const BadUsbHidAPI hid_api_usb = {
     .init = hid_usb_init,
     .deinit = hid_usb_deinit,
     .set_state_callback = hid_usb_set_state_callback,
