@@ -33,7 +33,7 @@ void ibutton_scene_read_key_menu_on_enter(void* context) {
     if(features & iButtonProtocolFeatureWriteBlank) {
         submenu_add_item(
             submenu,
-            "Write ID",
+            "Schreib ID",
             SubmenuIndexWriteBlank,
             ibutton_scene_read_key_menu_submenu_callback,
             ibutton);
