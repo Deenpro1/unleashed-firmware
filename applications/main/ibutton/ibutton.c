@@ -188,7 +188,7 @@ bool ibutton_load_key(iButton* ibutton, bool show_error) {
 
         furi_string_free(tmp);
     } else if(show_error) {
-        dialog_message_show_storage_error(ibutton->dialogs, "Cannot load\nkey file");
+        dialog_message_show_storage_error(ibutton->dialogs, "Kann Datei\nnicht laden");
     }
 
     return success;
@@ -225,7 +225,7 @@ bool ibutton_save_key(iButton* ibutton) {
         ibutton_protocols_save(ibutton->protocols, key, furi_string_get_cstr(ibutton->file_path));
 
     if(!success) {
-        dialog_message_show_storage_error(ibutton->dialogs, "Cannot save\nkey file");
+        dialog_message_show_storage_error(ibutton->dialogs, "Kann nicht\ndie Datei finden");
     }
 
     return success;
